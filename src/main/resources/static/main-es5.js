@@ -321,7 +321,7 @@ __webpack_require__.r(__webpack_exports__);
 var AuthentificationService = /** @class */ (function () {
     function AuthentificationService(http) {
         this.http = http;
-        this.auth = 'http://localhost:8080/login';
+        this.auth = 'http://ong4sani.herokuapp.com/login';
     }
     AuthentificationService.prototype.LoginUser = function (user) {
         return this.http.post(this.auth, user, { observe: 'response' });

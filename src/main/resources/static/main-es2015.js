@@ -310,7 +310,7 @@ __webpack_require__.r(__webpack_exports__);
 let AuthentificationService = class AuthentificationService {
     constructor(http) {
         this.http = http;
-        this.auth = 'http://localhost:8080/login';
+        this.auth = 'http://ong4sani.herokuapp.com/login';
     }
     LoginUser(user) {
         return this.http.post(this.auth, user, { observe: 'response' });

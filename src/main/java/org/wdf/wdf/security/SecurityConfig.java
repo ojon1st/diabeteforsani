@@ -33,12 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-		http.authorizeRequests().antMatchers("/").permitAll();	
-		http.authorizeRequests().antMatchers("/assets/**").permitAll();	
-		http.authorizeRequests().antMatchers("/**js**").permitAll();	
-		http.authorizeRequests().antMatchers("/**css**").permitAll();	
-		http.authorizeRequests().antMatchers("/**html**").permitAll();	
-		http.authorizeRequests().antMatchers("/login/**").permitAll();	
+		http.authorizeRequests().antMatchers("/**").permitAll();	
+		// http.authorizeRequests().antMatchers("/assets/**").permitAll();	
+		// http.authorizeRequests().antMatchers("/**js**").permitAll();	
+		// http.authorizeRequests().antMatchers("/**css**").permitAll();	
+		// http.authorizeRequests().antMatchers("/**html**").permitAll();	
+		// http.authorizeRequests().antMatchers("/login/**").permitAll();	
+		http.authorizeRequests().antMatchers("/api/**").hasAnyAuthority("ADMINSUPPREME","ADMINSITE");
 		http.authorizeRequests().antMatchers("/api/formation/list/**").permitAll();
 		http.authorizeRequests().antMatchers("/api/depistage/list/**").permitAll();
 		http.authorizeRequests().antMatchers("/api/soin/list/**").permitAll();
