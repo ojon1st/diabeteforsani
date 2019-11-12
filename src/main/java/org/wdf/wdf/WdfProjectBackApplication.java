@@ -27,6 +27,7 @@ public class WdfProjectBackApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub	
 		Utilisateur user=new Utilisateur();
+		utilisateurRepository.deleteAll();
 		user.setNom("admin");
 		user.setPrenom("admin");
 		user.setLogin("admin");
